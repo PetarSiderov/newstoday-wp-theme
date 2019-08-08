@@ -46,36 +46,42 @@
 	<div style="top:30px;" class="border-top block clearfix">
 		<div class="container">
 			<!-- Logo -->
-			<a class="logo has-banner float-left text-center-md" href="index.html">
-				<?php the_custom_logo(); ?>
-			</a>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-2">
+				<a class="logo has-banner float-left text-center-md" href="index.html">
+					<?php the_custom_logo(); ?>
+				</a>
+				</div>
+				<div class="col-md-2 col-md-offset-8">
+						<?php dynamic_sidebar( 'sidebar-5' ); ?>
+				</div>
+			</div><!-- row -->
 		</div>
 	</div>
+	
 
-
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstrap2wordpress' ); ?></a>
 	<header id="topNav">
 					<div class="container">
+						
 						<div class="navbar-collapse collapse float-left nav-main-collapse pl-0 pr-0">
-							<nav class="nav-main">
-									</nav>
-									</div>
+							
+						</div>
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
 									<?php
 									wp_nav_menu( array(
 										'theme_location'  => 'menu-1',
-										'container' 	  => 'div',
-										'container_class' => 'nnavbar-collapse ',
-										'menu_class'      => 'collapse float-left nav-main-collapse pl-0 pr-0',
-										'container'       => 'nav',
-										'container_class' => 'nav-main',
+										'container' 	  => 'ul',
+										'container_class' => 'navbar-main-collapse ',
 										'container'       => 'ul',
 										'menu_id'         => 'topMain',
-										'menu_class'      => 'nav nav-pills nav-main',
+										'menu_class'      => 'nav nav-pills nav-main navbar-toggleable-md sticky header-sm clearfix',
 									));
+									
 								?>	
-							</nav>
-					</div>
-			</div>
+					</div><!--nav-collapse -->
+			</div><!-- container -->
 		</header>
 </div>
 								
